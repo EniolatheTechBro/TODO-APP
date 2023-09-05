@@ -1,0 +1,104 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: darkorange;
+}
+h1{
+    text-align: center;
+    color: white;
+    margin-top: 5%;
+}
+.todoBOX{
+    /* border: thin solid red; */
+     margin:8% auto;
+    min-height:5vh;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#inputVal{
+    border: none;
+    padding: 13.5px;
+    width: 80%;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+#TaskButton{
+    width: 20%;
+    border: none;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding: 10px;
+    background-color: rgb(255, 238, 0);
+    color: black;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+#display{
+    width: 70%;
+    margin: auto;
+}
+
+.BigTaskDiv{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.taskdiv{
+    background-color: rgb(21, 8, 68);
+    box-shadow:0px 4px 15px 2px black;
+    color: white;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    padding: 20px;
+    width: 70%;
+}
+#Delete{
+    width: 10%;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 0;
+    background-color: rgb(23, 2, 31);
+    color: white;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+#searcp{
+    /* display: none; */
+    width: 30%;
+    margin: auto;
+    /* border: thin solid black; */
+    margin-bottom: 20px;
+    margin-top: -60px;
+    display: none;
+}
+
+#searchINP{
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+
+}
+#error{
+    background-color: red;
+    font-size: 1.3rem;
+    font-weight: 700;
+    width: 50%;
+    margin: auto;
+    text-align: center;
+}
+
