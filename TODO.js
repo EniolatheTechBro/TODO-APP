@@ -13,20 +13,18 @@
         if(inputVal.value !== ''){
       
         
-        todo.push(inpuTT)
-        Display()
-        inputVal.value = ''
+            todo.push(inpuTT)
+            Display()
+            inputVal.value = ''
 
-        localStorage.setItem('TODO', JSON.stringify(todo))
+            localStorage.setItem('TODO', JSON.stringify(todo))
 
-        // console.log(todo);   
+            // console.log(todo);   
 
-       
+        
 
-        error.style.display = 'none'
-        if(todo.length >= 4){
-            searcp.style.display = 'block'
-        }
+            error.style.display = 'none'
+            
 
 
         }else if(inputVal.value === ''){
@@ -52,6 +50,11 @@ function Display(){
         
         `         
         })       
+        if(todo.length >= 4){
+            searcp.style.display = 'block'
+        }else{
+            searcp.style.display = 'none'
+        }
 
     // localStorage.setItem('TODO', JSON.stringify(todo))
     
