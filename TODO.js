@@ -1,15 +1,27 @@
 
-let todo = [];
+    let todo = JSON.parse(localStorage.getItem('TODO'))
+    if(!todo){
+        todo=[]
+    };
+    
 
-TaskButton.addEventListener('click',()=>{
 
-    let inpuTT = inputVal.value.toLowerCase()
-    if(inputVal.value !== ''){
+    TaskButton.addEventListener('click',()=>{
+
+
+        let inpuTT = inputVal.value.toLowerCase()
+        if(inputVal.value !== ''){
+      
+        
         todo.push(inpuTT)
-
-        console.log(todo);   
-
         Display()
+        inputVal.value = ''
+
+        localStorage.setItem('TODO', JSON.stringify(todo))
+
+        // console.log(todo);   
+
+       
 
         error.style.display = 'none'
         if(todo.length >= 4){
@@ -17,14 +29,18 @@ TaskButton.addEventListener('click',()=>{
         }
 
 
+        }else if(inputVal.value === ''){
+            error.innerHTML = `<div id="errortext">PLEASE ENTER YOUR TASK</div>`
+        }          
 
-    }else if(inputVal.value === ''){
-        error.innerHTML = `<div id="errortext">PLEASE ENTER YOUR TASK</div>`
-    }          
+
 })
+
+
 
 function Display(){
 
+    // let todoStr = JSON.parse(localStorage.getItem('TODO'))
         display.innerHTML = ''
         todo.forEach((elem,i)=>{
         display.innerHTML += `
@@ -35,16 +51,25 @@ function Display(){
             </div>
         
         `         
-    })       
+        })       
+
+    // localStorage.setItem('TODO', JSON.stringify(todo))
     
+  
 }
+
+Display()
 
 function erase(id){
-
-   todo.splice(id,1)
-
+   
+   
+    todo.splice(id,1)
+    localStorage.setItem('TODO', JSON.stringify(todo))
     Display()
+   
+
 }
+
 
 function filterTODO(){
     let searchinp = searchINP.value.toLowerCase()
