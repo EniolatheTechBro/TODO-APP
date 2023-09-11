@@ -38,7 +38,7 @@
 
 function Display(){
 
-    // let todoStr = JSON.parse(localStorage.getItem('TODO'))
+    let todoStr = JSON.parse(localStorage.getItem('TODO'))
         display.innerHTML = ''
         todo.forEach((elem,i)=>{
         display.innerHTML += `
@@ -56,7 +56,7 @@ function Display(){
             searcp.style.display = 'none'
         }
 
-    // localStorage.setItem('TODO', JSON.stringify(todo))
+    localStorage.setItem('TODO', JSON.stringify(todo))
     
   
 }
@@ -77,7 +77,8 @@ function erase(id){
 function filterTODO(){
     let searchinp = searchINP.value.toLowerCase()
 
-    display.innerHTML = ''
+    display.innerHTML = '';
+    todo = JSON.parse(localStorage.getItem('TODO'))
     let filterD = todo.filter((elem,i)=>{
             return elem.includes(searchinp)
     })
